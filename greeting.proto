@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "/pb";
+
+message GreetingRequest {
+  string name = 1;
+  uint32 age = 2;
+}
+
+message GreetingResponse {
+  string message = 1;
+}
+
+service Greeter {
+  rpc SayHello (GreetingRequest) returns (GreetingResponse);
+}
+
